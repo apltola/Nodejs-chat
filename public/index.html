@@ -4,11 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>chat</title>
+  <title>turpakii_v2</title>
 </head>
 <body>
   <div>
     turpakii_v2.0
   </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    let socket = io();
+    socket.on('connect', () => {
+      console.log('CONNECTED TO SERVER');
+    })
+
+    socket.on('disconnect', () => {
+      console.log('DISCONNECTED FROM SERVER');
+    })
+  </script>
 </body>
 </html>
