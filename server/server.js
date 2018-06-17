@@ -3,6 +3,7 @@ const http = require('http');
 const publicPath = path.join(__dirname, '../public');
 const express = require('express');
 const socketIO = require('socket.io');
+const { generateMessage } = require('./utils/message')
 
 const app = express();
 const server = http.createServer(app);
@@ -11,18 +12,15 @@ const io = socketIO(server);
 
 
 io.on('connection', (socket) => {
+  socket.emit('newMessage', generateMessage('Admin', 'welcome to turpakii_v2.0'))
 
-  //otetaan kiinni clientin lähettämästä uudesta viestistä
+  socket.broadcast.emit('newMessage', generateMessage('Admin', 'new user joined!'))
+  
   socket.on('createMessage', (message) => {
     console.log('createMessage', message);
-    //io emits a message to every connection
-    io.emit('newMessage', {
-      from: message.from,
-      text: message.text,
-      createdAt: new Date().toLocaleTimeString()
-    })
-  })
 
+    io.emit('newMessage', generateMessage(message.from, message.text))
+  })
 })
 
 app.use(express.static(publicPath));
