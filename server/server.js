@@ -11,20 +11,18 @@ const io = socketIO(server);
 
 
 io.on('connection', (socket) => {
-  console.log('NEW USER CONNECTED');
 
-  socket.emit('newMessage', {
-    from: 'allu',
-    text: 'i have a eating problem',
-  });
-
+  //otetaan kiinni clientin lähettämästä uudesta viestistä
   socket.on('createMessage', (message) => {
     console.log('createMessage', message);
+    //io emits a message to every connection
+    io.emit('newMessage', {
+      from: message.from,
+      text: message.text,
+      createdAt: new Date().toLocaleTimeString()
+    })
   })
 
-  socket.on('disconnect', () => {
-    console.log('HEY SOMEBODY DISCONNECTED!')
-  })
 })
 
 app.use(express.static(publicPath));
