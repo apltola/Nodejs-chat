@@ -8,8 +8,19 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
 
+
+
 io.on('connection', (socket) => {
-  console.log('NEW USER CONNECTED')
+  console.log('NEW USER CONNECTED');
+
+  socket.emit('newMessage', {
+    from: 'allu',
+    text: 'i have a eating problem',
+  });
+
+  socket.on('createMessage', (message) => {
+    console.log('createMessage', message);
+  })
 
   socket.on('disconnect', () => {
     console.log('HEY SOMEBODY DISCONNECTED!')
