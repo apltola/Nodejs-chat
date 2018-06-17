@@ -4,14 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="index.css">
+
   <title>turpakii_v2</title>
 </head>
 <body>
-  <div>
-    turpakii_v2.0
+  <div class="wrapper wrapper-primary">
+    <div class="wrapper wrapper-secondary">
+
+      <div class="header-wrapper">
+        <div class="header-content">
+          turpakii_v2.0
+        </div>
+      </div>
+
+      <div>
+        <form id="message-form">
+            <input class="inputti message-inputti" name="message" type="text" placeholder="message the group" autocomplete="off"/>
+            <button class="buttoni send-buttoni">send</button>
+        </form>
+      </div>
+
+      <div class="messages-container" id="messages">
+      </div>
+    </div>
   </div>
 
   <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/libs/jquery-3.3.1.min.js"></script>
   <script src="/js/index.js"></script>
 </body>
 </html>

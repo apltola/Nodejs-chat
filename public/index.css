@@ -1,0 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+body {
+  font-family: roboto;
+}
+
+.header-wrapper {
+  margin-bottom: 5vh;
+}
+
+.message-inputti {
+  height: 20px;
+  width: 300px;
+  font-size: 18px;
+  padding: 5px;
+  font-family: roboto;
+}
+
+.buttoni {
+  font-size: 18px;
+}
+
+.messages-container {
+  padding: 10px;
+  margin-top: 2rem;
+}
+
+.testi {
+  padding: 10px 0px;
+  border-bottom: 1px solid #e9e8e8dc;
+}
