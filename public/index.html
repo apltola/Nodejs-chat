@@ -7,7 +7,7 @@
 
   <link rel="stylesheet" href="index.css">
 
-  <title>turpakii_v2</title>
+  <title>turpakii</title>
 </head>
 <body>
   <div class="wrapper wrapper-primary">
@@ -15,20 +15,25 @@
 
       <div class="header-wrapper">
         <div class="header-content">
-          turpakii_v2.0
+          <div class="header-brand">
+            #turpakii
+          </div>
         </div>
       </div>
 
-      <div>
-        <form id="message-form">
-            <input class="inputti message-inputti" name="message" type="text" placeholder="message the group" autocomplete="off"/>
-            <button class="buttoni send-buttoni">send</button>
-        </form>
+      <div class="white-background">
+        <div>
+          <form id="message-form">
+              <input class="inputti message-inputti" name="message" type="text" placeholder="message the group" autocomplete="off"/>
+              <button class="buttoni send-buttoni">send</button>
+            </form>
+            <button class="buttoni location-buttoni" id="share-location">share your location!</button>
+        </div>
+  
+        <div class="messages-container" id="messages">
+        </div>
       </div>
-
-      <div class="messages-container" id="messages">
       </div>
-    </div>
   </div>
 
   <script src="/socket.io/socket.io.js"></script>

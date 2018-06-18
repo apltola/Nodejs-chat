@@ -1,11 +1,43 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic);
 
 body {
   font-family: roboto;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper-primary {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.wrapper-secondary {
+  flex: 1;
+  margin: 15px;
+  max-width: 900px;
 }
 
 .header-wrapper {
-  margin-bottom: 5vh;
+  display: flex;
+  background: none !important;
+  border-bottom: 2px solid #e8e8e8;
+  margin-bottom: 3rem;
+}
+
+.header-brand {
+  padding: 5px 10px;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: lato;
+}
+
+.white-background {
+  background: #ffffff;
+  min-height: 90vh;
+  padding: 10px;
 }
 
 .message-inputti {
@@ -18,14 +50,39 @@ body {
 
 .buttoni {
   font-size: 18px;
+  background-color: #000;
+  color: whitesmoke;
+}
+
+.location-buttoni {
+  margin-top: 1rem;
 }
 
 .messages-container {
-  padding: 10px;
   margin-top: 2rem;
+  max-width: 400px;
+  background: white;
 }
 
 .testi {
   padding: 10px 0px;
+  border-bottom: 1px solid #e9e8e8dc;
+}
+
+.message-sender {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.message-iat {
+  display: inline-block;
+  margin-left: 15px;
+  font-size: 13px;
+}
+
+.message-content {
+  display: block;
+  padding: 8px 10px 10px 10px;
+  margin-bottom: 10px;
   border-bottom: 1px solid #e9e8e8dc;
 }
