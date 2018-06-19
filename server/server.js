@@ -5,6 +5,8 @@ const express = require('express');
 const socketIO = require('socket.io');
 const { generateMessage, generateLocationMessage } = require('./utils/message')
 
+
+
 const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
