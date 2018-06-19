@@ -2,6 +2,7 @@
 @import './_utils.scss';
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
 @import url(https://fonts.googleapis.com/css?family=Shrikhand:regular);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic);
 
 html {
   height: 100%;
@@ -40,6 +41,10 @@ html {
       order: 1;
       flex-basis: 150px;
     }
+
+    .users-online-title {
+      font-weight: bold;
+    }
   }
 
   .col-center {
@@ -75,7 +80,7 @@ html {
         }
   
         .message-content {
-          padding: 5px 0;
+          margin-bottom: 15px;
           max-width: 100%;
           word-wrap: break-word;
         }
@@ -99,8 +104,10 @@ html {
       }
 
       .send-buttoni {
-        font-size: 18px;
+        font-size: 22px;
         border: 1px solid black;
+        background-color: white;
+        font-family: ubuntu;
       }
     }
   }
@@ -118,6 +125,10 @@ html {
       display: flex;
       flex-flow: column nowrap;
       font-size: 4vw;
+    }
+
+    .turpakii-logo {
+      margin-right: 3px;
     }
 
     .powered-by-container {
@@ -149,6 +160,9 @@ html {
 
       #sass-logo, #html-logo {
         margin-top: 15px;
+      }
+      #html-logo {
+        margin-left: 25px;
       }
     }
   }

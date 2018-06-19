@@ -14,15 +14,15 @@ const io = socketIO(server);
 
 
 io.on('connection', (socket) => {
-  socket.emit('newMessage', generateMessage('Admin', 'welcome to turpakii_v2.0'))
+  socket.emit('newMessage', generateMessage('Admin-botti', 'welcome to turpakii_v2.0'))
 
-  socket.broadcast.emit('newMessage', generateMessage('Admin', 'new user joined!'))
+  socket.broadcast.emit('newMessage', generateMessage('Admin-botti', 'new user joined!'))
   
   socket.on('createMessage', (message, callback) => {
     console.log('createMessage', message);
 
     io.emit('newMessage', generateMessage(message.from, message.text))
-    callback('this is from the server!');
+    callback();
   })
 
   socket.on('createLocationMessage', (coords) => {

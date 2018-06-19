@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
 @import url(https://fonts.googleapis.com/css?family=Shrikhand:regular);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic);
 html {
   height: 100%;
   box-sizing: border-box; }
@@ -30,6 +31,8 @@ html {
       .container-primary .col-left {
         order: 1;
         flex-basis: 150px; } }
+    .container-primary .col-left .users-online-title {
+      font-weight: bold; }
   .container-primary .col-center {
     flex: 1;
     order: 3;
@@ -56,7 +59,7 @@ html {
           padding-left: 20px;
           font-size: 14px; }
         .container-primary .col-center .messages-container .messages .message-content {
-          padding: 5px 0;
+          margin-bottom: 15px;
           max-width: 100%;
           word-wrap: break-word; }
     .container-primary .col-center .form-container {
@@ -71,8 +74,10 @@ html {
         .container-primary .col-center .form-container .message-inputti:focus {
           outline: none; }
       .container-primary .col-center .form-container .send-buttoni {
-        font-size: 18px;
-        border: 1px solid black; }
+        font-size: 22px;
+        border: 1px solid black;
+        background-color: white;
+        font-family: ubuntu; }
   .container-primary .col-right {
     order: 1;
     position: relative;
@@ -87,6 +92,8 @@ html {
         display: flex;
         flex-flow: column nowrap;
         font-size: 4vw; } }
+    .container-primary .col-right .turpakii-logo {
+      margin-right: 3px; }
     .container-primary .col-right .powered-by-container {
       display: none; }
       @media only screen and (min-width: 1200px) {
@@ -107,5 +114,7 @@ html {
         display: block; }
       .container-primary .col-right .powered-by-container #sass-logo, .container-primary .col-right .powered-by-container #html-logo {
         margin-top: 15px; }
+      .container-primary .col-right .powered-by-container #html-logo {
+        margin-left: 25px; }
 
 /*# sourceMappingURL=style.css.map */
