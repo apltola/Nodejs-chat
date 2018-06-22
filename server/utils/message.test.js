@@ -7,7 +7,7 @@ describe('generateMessage', () => {
     const text = 'test message';
     const message = generateMessage(from, text);
 
-    expect(typeof message.createdAt).toBe('string');
+    expect(typeof message.createdAt).toBe('number');
     expect(message).toHaveProperty('from', 'text', 'createdAt');
   })
 });

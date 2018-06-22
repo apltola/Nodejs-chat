@@ -48,8 +48,8 @@ html {
       background: white; }
       .container-primary .col-center .messages-container .messages {
         padding: 20px 10px 0 10px;
-        height: 90%;
-        max-height: 90%;
+        height: 100%;
+        max-height: 100%;
         overflow: scroll; }
         .container-primary .col-center .messages-container .messages .message-sender {
           display: inline-block;
@@ -63,8 +63,10 @@ html {
           max-width: 100%;
           word-wrap: break-word; }
     .container-primary .col-center .form-container {
-      height: 60px;
-      padding-left: 10px; }
+      height: 70px;
+      padding-left: 10px;
+      padding-top: 10px;
+      background: #ecebeb; }
       .container-primary .col-center .form-container .message-inputti {
         width: 80%;
         padding: 10px;

@@ -42,67 +42,18 @@
     </div>
   </div>
 
-
-
-
-
-
-
-
-  <!-- <div class="wrapper wrapper-primary">
-    <div class="side-col-left">
-      <div class="side-col-left-title">
-        Users online
-      </div>
+  <script id="message-template" type="text/template">
+    <div>
+      <div class="message-sender">{{sender}}</div>
+      <div class="message-iat">{{iat}}</div>
+      <div class="message-content">{{content}}</div>
     </div>
-    <div class="wrapper-center">
-      <div class="wrapper-messages">
-        <h1>hello</h1>
-          <div class="messages-container" id="messages"></div>
-      </div>
-      <div class="form-container">
-        this is the form container
-        <form id="message-form">
-          <input class="inputti message-inputti" name="message" type="text" placeholder="message the group" autocomplete="off"/>
-          <button class="buttoni send-buttoni">send</button>
-        </form>
-      </div>
-    </div>
-    <div class="side-col-right">
-      this is the right col
-    </div> -->
-
-
-
-
-
-
-    <!-- <div class="wrapper wrapper-secondary">
-
-      <div class="header-wrapper">
-        <div class="header-content">
-          <div class="header-brand">
-            #turpakii
-          </div>
-        </div>
-      </div>
-
-      <div class="white-background">
-        <div>
-          <form id="message-form">
-              <input class="inputti message-inputti" name="message" type="text" placeholder="message the group" autocomplete="off"/>
-              <button class="buttoni send-buttoni">send</button>
-            </form>
-            <button class="buttoni location-buttoni" id="share-location">share your location!</button>
-        </div>
-  
-        <div class="messages-container" id="messages"></div>
-      </div>
-    </div> -->
-  </div>
+  </script>
 
   <script src="/socket.io/socket.io.js"></script>
   <script src="/js/libs/jquery-3.3.1.min.js"></script>
+  <script src="/js/libs/moment.js"></script>
+  <script src="/js/libs/mustache.js"></script>
   <script src="/js/index.js"></script>
 </body>
 </html>

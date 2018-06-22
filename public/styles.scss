@@ -64,8 +64,8 @@ html {
 
       .messages {
         padding: 20px 10px 0 10px;
-        height: 90%;
-        max-height: 90%;
+        height: 100%;
+        max-height: 100%;
         overflow: scroll;
 
         .message-sender {
@@ -88,8 +88,10 @@ html {
     }
 
     .form-container {
-      height: 60px;
+      height: 70px;
       padding-left: 10px;
+      padding-top: 10px;
+      background: rgb(236, 235, 235); 
 
       .message-inputti {
         width: 80%;

@@ -1,22 +1,38 @@
 let socket = io();
 
-socket.on('connect', function() {
-  
-});
+function scrollToBottom() {
+  //selectors
+  var messages = jQuery('#messages');
+  var newMessage = messages.children('div:last-child');
+
+  //heights
+  var clientHeight = messages.prop('clientHeight');
+  var scrollTop = messages.prop('scrollTop');
+  var scrollHeight = messages.prop('scrollHeight');
+  var newMessageHeight = newMessage.innerHeight();
+  console.log('newMessageHeight :', newMessageHeight);
+  var lastMessageHeight = newMessage.prev().innerHeight();
+  console.log('lastMessageHeight :', lastMessageHeight);
+
+  if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight + 25 >= scrollHeight) {
+    console.log('should scroll!!')
+    messages.scrollTop(scrollHeight);
+  } else {
+    console.log('ei tosiaan')
+  }
+}
 
 socket.on('newMessage', function(message) {
-  console.log('newMessage', message);
-  
-  const senderDiv = jQuery('<div class="message-sender"></div>')
-  senderDiv.text(message.from);
-  
-  const iat = message.createdAt.slice(0, 5);
-  const timeDiv = jQuery('<div class="message-iat"></div>')
-  timeDiv.text(iat);
+  const formattedTime = moment(message.createdAt).format('h:mm a');
+  const template = jQuery('#message-template').html();
+  const html = Mustache.render(template, {
+    sender: message.from,
+    iat: formattedTime,
+    content: message.text
+  });
 
-  const contentDiv = jQuery('<div class="message-content"></div>')
-  contentDiv.text(message.text);
-  jQuery('#messages').append(senderDiv, timeDiv, contentDiv);
+  jQuery('#messages').append(html);
+  scrollToBottom();
 });
 
 
@@ -25,13 +41,9 @@ socket.on('newLocationMessage', function(message) {
   const divi = jQuery('<div class="message-sender"></div>');
   const ankkuri = jQuery('<a class="message-content" target=_blank>Current location</a>');
 
-  const iat = message.createdAt.slice(0, 5);
-  const timeDiv = jQuery('<div class="message-iat"></div>')
-  timeDiv.text(iat);
-
   divi.text(message.from);
   ankkuri.attr('href', message.url);
-  jQuery('#messages').append(divi, timeDiv, ankkuri);
+  jQuery('#messages').append(divi, ankkuri);
 })
 
 jQuery('#message-form').on('submit', function(e) {
