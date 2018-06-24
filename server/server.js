@@ -11,17 +11,17 @@ const server = http.createServer(app);
 const io = socketIO(server);
 
 io.on('connection', (socket) => {
-  socket.emit('newMessage', generateMessage('Admin-botti', 'welcome to turpakii_v2.0'))
-
-  socket.broadcast.emit('newMessage', generateMessage('Admin-botti', 'new user joined!'))
-
+  
   socket.on('join', (params, callback) => {
-    console.log(params.username);
     if (!isRealString(params.username) || !isRealString(params.room)) {
-      console.log('buu');
       callback('username & room name are required!');
     } else {
-      console.log('jaaa');
+      
+      //websocketti toimii nätisti... socket.joinilla päästään johonkin tiettyyn kantaan antamalla vaan stringi
+      socket.join(params.room);
+
+      socket.emit('newMessage', generateMessage('Admin-botti', 'welcome to turpakii_v2.0!'))
+      socket.broadcast.to(params.room).emit('newMessage', generateMessage('Admin-botti', `${params.username} joined the chat`))
       callback();
     }
   });

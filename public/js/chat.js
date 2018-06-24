@@ -17,6 +17,9 @@ function scrollToBottom() {
   }
 }
 
+
+
+
 socket.on('connect', function() {
   const params = jQuery.deparam(window.location.search);
 
@@ -26,10 +29,12 @@ socket.on('connect', function() {
       //we can manipulate the page the user's on with:
       window.location.href = '/';
     } else {
-      console.log('yeeea baby no errors');
+      
     }
   });
 });
+
+
 
 socket.on('newMessage', function(message) {
   const formattedTime = moment(message.createdAt).format('h:mm a');
