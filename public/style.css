@@ -68,18 +68,25 @@ html {
       padding-top: 10px;
       background: #ecebeb; }
       .container-primary .col-center .form-container .message-inputti {
-        width: 80%;
+        width: 97%;
         padding: 10px;
         font-size: 18px;
         border-radius: 10px;
         border: 1px solid black; }
+        @media only screen and (max-width: 578px) {
+          .container-primary .col-center .form-container .message-inputti {
+            width: 95%; } }
         .container-primary .col-center .form-container .message-inputti:focus {
           outline: none; }
       .container-primary .col-center .form-container .send-buttoni {
         font-size: 22px;
         border: 1px solid black;
         background-color: white;
-        font-family: ubuntu; }
+        font-family: ubuntu;
+        display: none; }
+        @media only screen and (max-width: 578px) {
+          .container-primary .col-center .form-container .send-buttoni {
+            display: none; } }
   .container-primary .col-right {
     order: 1;
     position: relative;

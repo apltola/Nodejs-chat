@@ -9,3 +9,9 @@
     @content;
   }
 }
+
+@mixin phone-screen {
+  @media only screen and (max-width: 578px) {
+    @content;
+  }
+}
