@@ -32,7 +32,25 @@ html {
         order: 1;
         flex-basis: 150px; } }
     .container-primary .col-left .users-online-title {
+      font-size: 18px;
       font-weight: bold; }
+    .container-primary .col-left .username-container {
+      display: flex;
+      flex-flow: row nowrap;
+      overflow: scroll;
+      color: #ffffff;
+      font-size: 15px;
+      margin-top: 5px; }
+      @media only screen and (min-width: 800px) {
+        .container-primary .col-left .username-container {
+          flex-flow: column;
+          margin-top: 0; } }
+    .container-primary .col-left .username-container > * {
+      margin-left: 10px;
+      margin-top: 0; }
+      @media only screen and (min-width: 800px) {
+        .container-primary .col-left .username-container > * {
+          margin-top: 5px; } }
   .container-primary .col-center {
     flex: 1;
     order: 3;

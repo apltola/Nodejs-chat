@@ -35,6 +35,17 @@ socket.on('connect', function() {
 });
 
 
+socket.on('updateUserList', function(users) {
+  console.log('userList: ', users);
+  var ol = jQuery('<div class="username-container"></div>');
+  users.forEach(function(alkio) {
+    ol.append(jQuery('<div></div>').text(alkio));
+  });
+
+  jQuery('#userList').html(ol);
+});
+
+
 
 socket.on('newMessage', function(message) {
   const formattedTime = moment(message.createdAt).format('h:mm a');
