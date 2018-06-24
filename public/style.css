@@ -87,6 +87,7 @@ html {
     padding: 10px 5px;
     color: white;
     background: #000;
+    background-image: url("./img/connectwork.png");
     font-family: shrikhand !important; }
     @media only screen and (min-width: 800px) {
       .container-primary .col-right {
@@ -118,5 +119,79 @@ html {
         margin-top: 15px; }
       .container-primary .col-right .powered-by-container #html-logo {
         margin-left: 25px; }
+
+.signin-page-container {
+  background-image: url("./img/connectwork.png");
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center; }
+  @media only screen and (min-width: 800px) {
+    .signin-page-container {
+      flex-flow: row nowrap; } }
+  .signin-page-container .blokki {
+    font-family: shrikhand;
+    width: 300px;
+    height: 100px;
+    background: #ffffffd5; }
+    @media only screen and (min-width: 800px) {
+      .signin-page-container .blokki {
+        height: 270px; } }
+    .signin-page-container .blokki .blokki-text {
+      display: block !important;
+      text-align: center;
+      margin: auto 0;
+      line-height: 100px;
+      font-size: 30px; }
+      @media only screen and (min-width: 800px) {
+        .signin-page-container .blokki .blokki-text {
+          line-height: 250px; } }
+  .signin-page-container .signin-form-container {
+    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+    color: #02020B;
+    width: 300px;
+    padding: 20px; }
+    @media only screen and (min-width: 800px) {
+      .signin-page-container .signin-form-container {
+        height: 270px;
+        width: 470px; } }
+    .signin-page-container .signin-form-container .form-field {
+      font-weight: bold;
+      margin-bottom: 2rem;
+      color: #ffffff; }
+      .signin-page-container .signin-form-container .form-field .username-label, .signin-page-container .signin-form-container .form-field .chatroom-label {
+        font-size: 18px;
+        padding-bottom: 5px; }
+      .signin-page-container .signin-form-container .form-field .signin-input {
+        width: 95%;
+        height: 35px;
+        font-size: 20px;
+        outline: none;
+        border: none;
+        border-radius: 2px; }
+      .signin-page-container .signin-form-container .form-field .signin-buttoni {
+        display: block;
+        font-size: 18px;
+        margin: 0 auto;
+        padding: 5px 40px;
+        cursor: pointer;
+        background-color: white;
+        border: none;
+        color: black;
+        border-radius: 5px; }
+        @media only screen and (min-width: 800px) {
+          .signin-page-container .signin-form-container .form-field .signin-buttoni {
+            margin: 0; } }
+        .signin-page-container .signin-form-container .form-field .signin-buttoni:hover {
+          font-weight: bold;
+          -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75); }
+        .signin-page-container .signin-form-container .form-field .signin-buttoni:active {
+          background: #ffffffd5; }
+        .signin-page-container .signin-form-container .form-field .signin-buttoni:active, .signin-page-container .signin-form-container .form-field .signin-buttoni:focus {
+          outline: none; }
 
 /*# sourceMappingURL=style.css.map */

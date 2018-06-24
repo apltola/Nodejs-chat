@@ -121,6 +121,7 @@ html {
     padding: 10px 5px;
     color: white;
     background: #000;
+    background-image: url('./img/connectwork.png');
     font-family: shrikhand !important;
     @include big-screen {
       order: 3;
@@ -166,6 +167,104 @@ html {
       #html-logo {
         margin-left: 25px;
       }
+    }
+  }
+}
+
+.signin-page-container {
+  background-image: url('./img/connectwork.png');
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  @include big-screen {
+    flex-flow: row nowrap;
+  }
+
+  .blokki {
+    font-family: shrikhand;
+    width: 300px;
+    height: 100px;
+    background: #ffffffd5;
+    @include big-screen {
+      height: 270px;
+    }
+
+    .blokki-text {
+      display: block !important;
+      text-align: center;
+      margin: auto 0;
+      line-height: 100px;
+      font-size: 30px;
+      @include big-screen {
+        line-height: 250px;
+      }
+    }
+  }
+
+  .signin-form-container {
+    // background: linear-gradient(to bottom, rgba(250,217,97,1) 0%,rgba(249,190,80,1) 100%);
+    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+    color: #02020B;
+    width: 300px;
+    padding: 20px;
+    @include big-screen {
+      height: 270px;
+      width: 470px;
+    }
+  
+    .form-field {
+      font-weight: bold;
+      margin-bottom: 2rem;
+      color: #ffffff;
+  
+      .username-label, .chatroom-label {
+        font-size: 18px;
+        padding-bottom: 5px;
+      }
+  
+      .signin-input {
+        width: 95%;
+        height: 35px;
+        font-size: 20px;
+        outline: none;
+        border: none;
+        border-radius: 2px;
+      }
+  
+      .signin-buttoni {
+        display: block;
+        font-size: 18px;
+        margin: 0 auto;
+        padding: 5px 40px;
+        cursor: pointer;
+        background-color: white;
+        border: none;
+        color: black;
+        border-radius: 5px;
+        @include big-screen {
+          margin: 0;
+        }
+
+        &:hover {
+          font-weight: bold;
+          -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+          -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+          box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+        }
+
+        &:active {
+          background: #ffffffd5;
+        }
+
+        &:active, &:focus {
+          outline: none;
+        }
+
+      }
+  
     }
   }
 }

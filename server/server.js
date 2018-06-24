@@ -4,19 +4,27 @@ const publicPath = path.join(__dirname, '../public');
 const express = require('express');
 const socketIO = require('socket.io');
 const { generateMessage, generateLocationMessage } = require('./utils/message')
-
-
+const { isRealString } = require('./utils/validation');
 
 const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
 
-
-
 io.on('connection', (socket) => {
   socket.emit('newMessage', generateMessage('Admin-botti', 'welcome to turpakii_v2.0'))
 
   socket.broadcast.emit('newMessage', generateMessage('Admin-botti', 'new user joined!'))
+
+  socket.on('join', (params, callback) => {
+    console.log(params.username);
+    if (!isRealString(params.username) || !isRealString(params.room)) {
+      console.log('buu');
+      callback('username & room name are required!');
+    } else {
+      console.log('jaaa');
+      callback();
+    }
+  });
   
   socket.on('createMessage', (message, callback) => {
     console.log('createMessage', message);

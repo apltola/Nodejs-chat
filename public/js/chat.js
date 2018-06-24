@@ -10,17 +10,26 @@ function scrollToBottom() {
   var scrollTop = messages.prop('scrollTop');
   var scrollHeight = messages.prop('scrollHeight');
   var newMessageHeight = newMessage.innerHeight();
-  console.log('newMessageHeight :', newMessageHeight);
   var lastMessageHeight = newMessage.prev().innerHeight();
-  console.log('lastMessageHeight :', lastMessageHeight);
 
-  if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight + 25 >= scrollHeight) {
-    console.log('should scroll!!')
+  if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight + 30 >= scrollHeight) {
     messages.scrollTop(scrollHeight);
-  } else {
-    console.log('ei tosiaan')
   }
 }
+
+socket.on('connect', function() {
+  const params = jQuery.deparam(window.location.search);
+
+  socket.emit('join', params, function(err) {
+    if (err) {
+      alert(err);
+      //we can manipulate the page the user's on with:
+      window.location.href = '/';
+    } else {
+      console.log('yeeea baby no errors');
+    }
+  });
+});
 
 socket.on('newMessage', function(message) {
   const formattedTime = moment(message.createdAt).format('h:mm a');

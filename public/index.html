@@ -10,50 +10,27 @@
   <title>turpakii</title>
 </head>
 <body>
-  <div class="container-primary">
-    <div class="col-left">
-      <div class="users-online-title">
-        users online
+  <div class="container">
+    <div class="signin-page-container">
+      <div class="blokki">
+        <div class="blokki-text">join the chat !!</div>
       </div>
-    </div>
-    <div class="col-center">
-      <div class="messages-container">
-        <div class="messages" id="messages"></div>
-      </div>
-      <div class="form-container">
-        <form id="message-form">
-          <input class="inputti message-inputti" name="message" type="text" placeholder="message the group" autocomplete="off" autofocus/>
-          <button class="buttoni send-buttoni">send</button>
+      <div class="signin-form-container">
+        <form action="/chat.html">
+          <div class="form-field">
+            <div class="username-label">username:</div>
+            <input class="signin-input" type="text" name="username" autofocus autocomplete="off" />
+          </div>
+          <div class="form-field">
+            <div class="chatroom-label">chatroom:</div>
+            <input class="signin-input" type="text" name="room"/>
+          </div>
+          <div class="form-field">
+            <button class="signin-buttoni">join</button>
+          </div>
         </form>
       </div>
     </div>
-    <div class="col-right">
-      <div class="turpakii-logo">
-        #turpakii
-      </div>
-      <div class="powered-by-container">
-        <div id="powered-by-text">powered by:</div>
-        <img class="powered-by-img" id="js-logo" src="./img/JavaScript-logo.png" alt="js">
-        <img class="powered-by-img" id="node-logo" src="./img/nodejs-new-pantone-white.png" alt="js">
-        <img class="powered-by-img" id="socket-logo" src="./img/1_tOitxCwTNcS3ESstLylmtg.png" alt="js">
-        <img class="powered-by-img" id="sass-logo" src="./img/sass-logo.svg" alt="js">
-        <img class="powered-by-img" id="html-logo" src="./img/html-logo.png" alt="js">
-      </div>
-    </div>
   </div>
-
-  <script id="message-template" type="text/template">
-    <div>
-      <div class="message-sender">{{sender}}</div>
-      <div class="message-iat">{{iat}}</div>
-      <div class="message-content">{{content}}</div>
-    </div>
-  </script>
-
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="/js/libs/jquery-3.3.1.min.js"></script>
-  <script src="/js/libs/moment.js"></script>
-  <script src="/js/libs/mustache.js"></script>
-  <script src="/js/index.js"></script>
 </body>
 </html>
